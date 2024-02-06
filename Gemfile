@@ -40,6 +40,14 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
 end
 
+gem 'bcrypt', '> 3.1', '>= 3.1.12'
+
+gem 'jwt', ' > 2.5'
+
+gem 'rack-cors'
+
+gem 'active_model_serializers', '> 0.10.12'
+
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
