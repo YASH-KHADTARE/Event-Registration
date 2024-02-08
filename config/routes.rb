@@ -7,7 +7,17 @@ Rails.application.routes.draw do
 
   post "/users", to: "users#create"
   post "/login", to: "login#login"
-  get "/random", to: "users#random"
+  # resources :events
+  resources :users
+
+  resources :events do
+    post 'enroll', to: 'registrations#enroll'
+    delete 'unenroll', to: 'registrations#unenroll'
+  end
+
+  get 'events', to: 'events#index'
+  get 'my_events', to: 'registrations#my_events'
+
 
   # Defines the root path route ("/")
   # root "posts#index"
