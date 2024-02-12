@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   post "/users", to: "users#create"
   post "/login", to: "login#login"
   # resources :events
-  resources :users
+  resources :users do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :events do
     post 'enroll', to: 'registrations#enroll'
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
 
   get 'events', to: 'events#index'
   get 'my_events', to: 'registrations#my_events'
+  post '/search', to: 'events#search'
 
 
   # Defines the root path route ("/")
