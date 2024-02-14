@@ -12,11 +12,15 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get 'enrolled_events'
+    end
   end
 
   resources :events do
     post 'enroll', to: 'registrations#enroll'
     delete 'unenroll', to: 'registrations#unenroll'
+    get 'members', on: :member
   end
 
   get 'events', to: 'events#index'

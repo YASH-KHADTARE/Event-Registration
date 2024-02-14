@@ -44,6 +44,7 @@ end
 gem 'bcrypt', '> 3.1', '>= 3.1.12'
 
 gem 'faker'
+gem 'simplecov', require: false, group: :test
 gem 'jwt', ' > 2.5'
 
 gem 'rack-cors'

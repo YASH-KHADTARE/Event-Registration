@@ -9,7 +9,7 @@ RSpec.describe Event, type: :model do
     end
 
     it 'should be a invalid event' do
-    invalid_event = build(:event, publish_date: 'tue 25 may 2024 cacaas')
+    invalid_event = build(:event, publish_date: '93 may 2024')
       expect(invalid_event.valid?).to eq(false)
       expect(invalid_event.errors[:publish_date]).to include("Enter date in valid format YYYY-MM-DD")
     end 
